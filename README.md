@@ -4,6 +4,7 @@ Current project features:
 - Can return hard-coded message on any port for http server
 - Returns correct, but hard-coded headers for http
 - Prints out raw request packet
+- Gets index.html
 
 MAIN Project requirements:
 Be able to return index.html on /
