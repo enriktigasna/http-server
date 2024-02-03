@@ -1,1 +1,1 @@
-int socketlisten(int port, char* message);
+char* socketlisten(int port, char* message);
