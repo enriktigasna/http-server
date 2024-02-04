@@ -1,4 +1,5 @@
-#include "socketlisten.h"
+#include "socketread.h"
+#include "socketsend.h"
 #include "createsocket.h"
 #include "readfile.h"
 
@@ -14,13 +15,12 @@ int main(){
         return 1;
     }
 
-    char* message = "<!DOCTYPE html><html><head><title>Page Title</title></head><body><h1>This is a Heading</h1><p>This is a paragraph.</p></body>";
-
     char* response = malloc(1024);
     int socket = create_socket(8080);
 
-    while((response = socketlisten(socket, index)) != NULL){
+    while((response = socket_read(socket)) != NULL){
         printf("%s", response);
+        socket_send(socket, index);
     }
 
     return 0;

@@ -1,0 +1,1 @@
+char* socket_send(int socket, char* message);
