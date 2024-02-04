@@ -2,6 +2,7 @@
 #include "socketsend.h"
 #include "createsocket.h"
 #include "readfile.h"
+#include "parseheaders.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,7 +20,9 @@ int main(){
     int socket = create_socket(8080);
 
     while((response = socket_read(socket)) != NULL){
-        printf("%s", response);
+        struct headers* headers = parse_headers(response);
+        printf("%s %s FROM %s\n", headers->method, headers->path, headers->user_agent);
+
         socket_send(socket, index);
     }
 
