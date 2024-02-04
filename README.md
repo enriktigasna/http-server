@@ -5,6 +5,8 @@ Current project features:
 - Returns correct, but hard-coded headers for http
 - Prints out raw request packet
 - Gets index.html
+- Gets other files
+- Has 404.html aswell
 
 MAIN Project requirements:
 Be able to return index.html on /
